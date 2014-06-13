@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="Arr.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454611248674" remote="130312728000000000" Dst="2" />
+<file name="Constant.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454616079318" remote="130312728000000000" Dst="2" />
+<file name="Email.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454618469581" remote="130312728000000000" Dst="2" />
+<file name="HTTP.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454637721991" remote="130312728000000000" Dst="2" />
+<file name="Profiler.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454641252439" remote="130312728000000000" Dst="2" />
+<file name="logs.class.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454641762511" remote="130312728000000000" Dst="2" />
+<file name="cli.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454645792675" remote="130312728000000000" Dst="2" />
+<file name="Config.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454646253072" remote="130312728000000000" Dst="2" />
+<file name="Exception.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454650313237" remote="130312728000000000" Dst="2" />
+<file name="Encrypt.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454650813646" remote="130312728000000000" Dst="2" />
+<file name="Request.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454665455482" remote="130312728000000000" Dst="2" />
+<file name="Response.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454665935541" remote="130312728000000000" Dst="2" />
+<file name="URL.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454671786283" remote="130312728000000000" Dst="2" />
+<file name="Upload.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454672256338" remote="130312728000000000" Dst="2" />
+<file name="View.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454678216754" remote="130312728000000000" Dst="2" />
+<file name="Inflector.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454694899181" remote="130312728000000000" Dst="2" />
+<file name="Rain.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454699209730" remote="130312728000000000" Dst="2" />
+<file name="Cookie.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454716341881" remote="130312728000000000" Dst="2" />
+<file name="Controller.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454717051971" remote="130312728000000000" Dst="2" />
+<file name="Facebooks.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454728763447" remote="130312728000000000" Dst="2" />
+<file name="Route.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454739744822" remote="130312728000000000" Dst="2" />
+<file name="Google.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454744435409" remote="130312728000000000" Dst="2" />
+<file name="Text.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454756286559" remote="130312728000000000" Dst="2" />
+<file name="Jezyk.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454767618321" remote="130312728000000000" Dst="2" />
+<file name="Webcms.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454796661637" remote="130312728000000000" Dst="2" />
+<file name="Validate.php" server="frogss.pl//domains/frogss.pl/public_html/mvc/" local="130471454803352819" remote="130312728000000000" Dst="2" />
+</dwsync>

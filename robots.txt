@@ -1,0 +1,18 @@
+# Yandex bot
+User-agent: Yandex
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+user-agent: AhrefsBot
+Disallow: /
+
+User-agent: rogerbot 
+Disallow: /
+
+User-agent: findlinks
+Disallow: /
+
+User-agent: SurveyBot/2.3
+Disallow: /
