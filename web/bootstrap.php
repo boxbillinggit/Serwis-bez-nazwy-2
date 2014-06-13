@@ -97,6 +97,15 @@
 			'action'     => 'index',
 		));
 		
+		
+		$gzip = DB::query(Database::SELECT, 'SELECT * FROM settings WHERE name="gzip"')->as_object(TRUE)->execute()->current();
+		if($gzip->value == 'true') {
+			Gzip::init();	
+		} else {
+			Gzip::remove();
+			ob_start();	
+		}
+		
 
 $request = Request::instance();
 try
