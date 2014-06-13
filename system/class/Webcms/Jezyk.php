@@ -24,9 +24,9 @@ class Webcms_Jezyk {
 	
 	$wybierz = DB::query(Database::SELECT, 'SELECT * FROM tlumaczenia WHERE icon="'.$name.'" AND active = 1')->as_object(TRUE)->execute()->current();
 	
-	$db = DB::query(Database::SELECT, 'SELECT * FROM tlumaczenia_data WHERE lang_id='.$wybierz->id)->execute()->as_array();
+	$db = DB::query(Database::SELECT, 'SELECT * FROM tlumaczenia_data WHERE lang_id='.$wybierz->id)->as_object(TRUE)->execute();
 	foreach($db as $row) {
-		$jezyk[$row['klucz']] = $row['wartosc'];
+		$jezyk[$row->klucz] = $row->wartosc;
 	}
 
 	return $jezyk;
