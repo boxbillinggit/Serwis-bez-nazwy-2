@@ -21,7 +21,7 @@
 						<label for="field-1" class="col-sm-3 control-label"><?php echo Jezyk::get("#site_name"); ?></label>
 						
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="field-1" value="<?php echo Conf::get("site_name"); ?>">
+							<input type="text" class="form-control" id="field-1" name="site_name" value="<?php echo Conf::get("site_name"); ?>">
 						</div>
 					</div>
 	
@@ -29,7 +29,7 @@
 						<label for="field-2" class="col-sm-3 control-label"><?php echo Jezyk::get("#description"); ?></label>
 						
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="field-2" value="<?php echo Conf::get("description"); ?>">
+							<input type="text" class="form-control" id="field-2" name="description" value="<?php echo Conf::get("description"); ?>">
 						</div>
 					</div>
 	
@@ -37,7 +37,7 @@
 						<label for="field-3" class="col-sm-3 control-label"><?php echo Jezyk::get("#url"); ?></label>
 						
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="site-url" id="field-3" data-validate="required,url" value="<?php echo Conf::get("url"); ?>">
+							<input type="text" class="form-control" name="url" id="field-3" data-validate="required,url" value="<?php echo Conf::get("url"); ?>">
 						</div>
 					</div>
 	
@@ -53,12 +53,12 @@
 						<label class="col-sm-3 control-label"><?php echo Jezyk::get("#templates"); ?></label>
 						
 						<div class="col-sm-5">
-							<select class="form-control">
+							<select class="form-control" name="templates">
 								<?php
 								if ($handle = opendir(DOCROOT.'/web/view/')) {
 									while (false !== ($entry = readdir($handle))) {
 										if ($entry != "." && $entry != ".." && $entry != "admin") {
-											echo "<option>$entry</option>";
+											echo "<option value='$entry'>$entry</option>";
 										}
 									}
 									closedir($handle);
@@ -72,11 +72,11 @@
 						<label class="col-sm-3 control-label"><?php echo Jezyk::get("#select_language"); ?></label>
 						
 						<div class="col-sm-5">
-							<select class="form-control">
+							<select class="form-control" name="language">
 								<?php
 									$db = DB::query(Database::SELECT, 'SELECT * FROM tlumaczenia WHERE active=1')->as_object(TRUE)->execute();
 									foreach ($db as $lang) {
-										echo '<option value="'.$lang->name.'">'.$lang->name.'</option>';	
+										echo '<option value="'.$lang->icon.'">'.$lang->name.'</option>';	
 									}
 								?>
 							</select>
@@ -116,10 +116,10 @@
 						<div class="col-sm-5">
                         
                         <div class="radio">
-						<input type="radio" name="gzip" id="optionsRadios1" value="true"> Gzip On
+						<input type="radio" name="gzip" id="optionsRadios1" value="true" <?php if(Conf::get("gzip") == 'true') { echo ' checked=""'; } ?>> Gzip On
                         </div>
                         <div class="radio">
-						<input type="radio" name="gzip" id="optionsRadios1" value="false" checked=""> Gzip Off
+						<input type="radio" name="gzip" id="optionsRadios1" value="false" <?php if(Conf::get("gzip") == 'false') { echo ' checked=""'; } ?>> Gzip Off
                         </div>
 							
 							
@@ -155,29 +155,7 @@
 						
 						<div class="col-sm-5">
 						
-							<div class="radio radio-replace neon-cb-replacement checked">
-								<label class="cb-wrapper"><input type="radio" id="rd-1" name="radio1" checked=""><div class="checked"></div></label>
-								<label>March 27, 2014</label>
-							</div>
 							
-							<div class="radio radio-replace neon-cb-replacement">
-								<label class="cb-wrapper"><input type="radio" id="rd-2" name="radio1"><div class="checked"></div></label>
-								<label>03/27/2014</label>
-							</div>
-							
-							<div class="radio radio-replace neon-cb-replacement">
-								<label class="cb-wrapper"><input type="radio" id="rd-3" name="radio1"><div class="checked"></div></label>
-								<label>2014/03/27</label>
-							</div>
-							
-							<div class="radio radio-replace neon-cb-replacement">
-								<label class="cb-wrapper"><input type="radio" id="rd-4" name="radio1"><div class="checked"></div></label>
-								<label>
-									Custom format: 
-									<input type="text" class="form-control input-sm form-inline" value="d-m-Y" style="width: 70px; display: inline-block;">
-									<p class="description">Read more about <a href="http://php.net/date" target="_blank">date format</a></p>
-								</label>
-							</div>
 							
 						</div>
 					</div>
@@ -186,6 +164,10 @@
 			
 			</div>
 		</div>
+	</div>
+    
+    <div class="form-group default-padding">
+		<button type="submit" class="btn btn-success"><?php echo Jezyk::get("#save_change"); ?></button>
 	</div>
         </form>
         

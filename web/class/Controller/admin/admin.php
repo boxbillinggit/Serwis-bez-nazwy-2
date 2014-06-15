@@ -280,6 +280,14 @@ public function action_settings() {
 	
 	$this->log->info('Ustawienia ' . Request::instance()->controller .' AKCJA '. Request::instance()->action .' KATALOG '. Request::instance()->directory);
 	
+	$data = Request::current()->post();
+	if(empty($data)) {} else {
+		foreach($data as $k => $a) {
+		DB::update('settings')->set(array('value' => $a))->where('name', '=', $k)->execute();
+		}
+		Request::instance()->redirect("/admin/settings");
+	}
+	
 	//KONCZE LADOWAĆ
 	echo $this->template;
 	} else {
