@@ -10,7 +10,7 @@
 					<div class="panel-title">
 						<h4>
 							<?php echo Jezyk::get("#logs_system"); ?> 
-							<span class="badge badge-danger">73</span>
+							<span class="badge badge-danger"><?php echo count($logs); ?></span>
 						</h4>
 					</div>
 				</div>
@@ -31,37 +31,26 @@
 							<div class="comment-details">
 								
 								<div class="comment-head">
-									<a href="#"><?php echo $logi->DATETIME; ?></a> <div class="label label-<?php echo $logi->ERRORLEVEL; ?>"><?php echo $logi->ERRORLEVEL; ?></div>
+									<a href="#"><?php echo $logi->DATETIME; ?></a> <div class="label label-<?php echo strtolower($logi->ERRORLEVEL); ?>"><?php echo $logi->ERRORLEVEL; ?> : <?php echo Jezyk::get("#Line"); ?> <?php echo $logi->LINE; ?></div>
 								</div>
 								
 								<p class="comment-text">
-									Servants contempt as although addition dashwood is procured. Interest in yourself an do of numerous feelings cheerful confined. 
+                                    <?php echo $logi->VALUE; ?>
 								</p>
 								
 								<div class="comment-footer">
 									
 									<div class="comment-time">
-										Today - 21:05
+										<?php echo $logi->FILE; ?>
 									</div>
 									
 									<div class="action-links">
-										
-										<a href="#" class="approve">
-											<i class="entypo-check"></i>
-											Approve
-										</a>
-										
+                                    
 										<a href="#" class="delete">
 											<i class="entypo-cancel"></i>
 											Delete
 										</a>
-										
-										
-										<a href="javascript:;" onclick="jQuery('#modal-edit-comment').modal('show');" class="edit">
-											<i class="entypo-pencil"></i>
-											Edit
-										</a>
-										
+                                        
 									</div>
 									
 								</div>

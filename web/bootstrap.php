@@ -115,9 +115,9 @@ try
 
 catch( ReflectionException $e )
 {
-	//header("Location: /");
+header("Location: /");
 	
-		$template = View::factory('Webcms/error');
+		/*$template = View::factory('Webcms/error');
 			$class   = get_class($e);
 			$code    = $e->getCode();
 			$message = $e->getMessage();
@@ -131,7 +131,7 @@ catch( ReflectionException $e )
 			$template->file = $file;
 			$template->line = $line;
 			$template->trace = $trace;
-			echo $template;
+			echo $template; */
 
 	/*
 	$_SESSION['ex'] = '';
