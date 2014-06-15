@@ -1,4 +1,4 @@
-<form role="form" method="post" class="form-horizontal form-groups-bordered validate" action="" novalidate="novalidate">
+<form role="form" method="post" class="form-horizontal form-groups-bordered validate" action="" novalidate>
 <div class="row">
 		<div class="col-md-12">
 			
@@ -48,6 +48,25 @@
 						<div class="col-sm-5">
 							<input type="text" class="form-control" name="email" id="field-4" data-validate="required,email" value="john@doe.com">
 							<span class="description">Here you will receive site notifications.</span>
+						</div>
+					</div>
+                    
+                    <div class="form-group">
+						<label class="col-sm-3 control-label"><?php echo Jezyk::get("#templates"); ?></label>
+						
+						<div class="col-sm-5">
+							<select class="form-control">
+								<?php
+								if ($handle = opendir(DOCROOT.'/web/view/')) {
+									while (false !== ($entry = readdir($handle))) {
+										if ($entry != "." && $entry != ".." && $entry != "admin") {
+											echo "<option>$entry</option>";
+										}
+									}
+									closedir($handle);
+								}
+								?>
+							</select>
 						</div>
 					</div>
                     
