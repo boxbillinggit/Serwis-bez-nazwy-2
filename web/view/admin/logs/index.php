@@ -1,87 +1,86 @@
+<h2><?php echo Jezyk::get("#logs"); ?></h2>
 
-
-<article class="span12 data-block nested">
-						<div class="data-container">
-							<header>
-								<h2>Logi Systemowe</h2>
-								<ul class="data-header-actions">
-									<li>
-										<form class="form-search">
-											<div class="control-group">
-												<div class="controls">
-													<input class="search-query" type="text">
-													<button class="btn" type="submit">Search</button>
-												</div>
-											</div>
-										</form>
-									</li>
-								</ul>
-							</header>
-							<section>
+<div class="row">
+	
+		<div class="col-md-12">
+		
+			<div class="panel panel-primary">
+				
+				<div class="panel-heading">
+					<div class="panel-title">
+						<h4>
+							<?php echo Jezyk::get("#logs_system"); ?> 
+							<span class="badge badge-danger">73</span>
+						</h4>
+					</div>
+				</div>
+				
+				<div class="panel-body no-padding">
+					
+					<ul class="comments-list">
+						<?php 
+						foreach($logs as $logi) {
+						?>
+						<li>
+							<div class="comment-checkbox">
+								<div class="checkbox checkbox-replace neon-cb-replacement">
+									<label class="cb-wrapper"><input type="checkbox"><div class="checked"></div></label>
+								</div>
+							</div>
 							
-								<!-- Tickets container -->
-								<ul id="ticketsDemo" class="tickets">
+							<div class="comment-details">
 								
-									<!-- Tickets header -->
-									<li class="ticket-header">
-										<ul>
-											<li class="ticket-header-ticket">Ticket</li>
-											<li class="ticket-header-activity">Activity</li>
-											<li class="ticket-header-priority">Priority</li>
-											<li class="ticket-header-age">Age</li>
-										</ul>
-									</li>
-									<!-- /Tickets header -->
+								<div class="comment-head">
+									<a href="#"><?php echo $logi->DATETIME; ?></a> <div class="label label-<?php echo $logi->ERRORLEVEL; ?>"><?php echo $logi->ERRORLEVEL; ?></div>
+								</div>
+								
+								<p class="comment-text">
+									Servants contempt as although addition dashwood is procured. Interest in yourself an do of numerous feelings cheerful confined. 
+								</p>
+								
+								<div class="comment-footer">
 									
-									<!-- Tickets data -->
+									<div class="comment-time">
+										Today - 21:05
+									</div>
 									
-									<?php
-
-$handle = fopen(SYSPATH."/logs/log.csv", "r");
-$i=1;
-while (($data = fgetcsv($handle, 5000, ",")) !== FALSE) {
-$podmiana = explode(";",$data[0]);
-if($podmiana[1] == 'INFO') { $class= 'success';}
-elseif($podmiana[1] == 'ERROR' OR $podmiana[1] == 'WARNING' OR $podmiana[1] == 'ERRORLEVEL') { $class= 'important';} 
-elseif($podmiana[1] == 'DEBUG') { $class= 'warning';} else { $class=''; }
-echo '<li class="ticket-data">
-										<div class="ticket-overview">
-											<ul>
-												<li class="ticket-data-label">#'.$i.'</li>
-												<li class="ticket-data-activity">
-													<a href="#" data-toggle="collapse" data-parent="#ticketsDemo" data-target="#ticket'.$i.'">'.$podmiana[3].'</a>
-													<p>Nowy Błąd</p>
-												</li>
-												<li class="ticket-data-priority"><span class="label label-'.$class.'">'.$podmiana[1].'</span></li>
-												<li class="ticket-data-age">'.$podmiana[0].'</li>
-											</ul>
-										</div>
-										<div class="ticket-details collapse fade" id="ticket'.$i.'">
-											<dl>
-												<dt>Wstawiony:</dt>
-												<dd><strong>'.$podmiana[0].'</strong></dd>
-												<dt>Typ Błędu:</dt>
-												<dd><strong>'.$podmiana[1].'</strong></dd>
-												<dt>Linia Błędu:</dt>
-												<dd><strong>'.@$podmiana[4].'</strong></dd>
-												<dt class="clear">Scieżka:</dt>
-												<dd style="width:70%;"><strong>'.@$podmiana[5].'</strong></dd>
-												
-											</dl>
-											<h5>Opis</h5>
-											<p>'.$podmiana[3].'</p>
-											<a href="#" class="btn btn-alt btn-primary">Usuń Błąd</a>
-										</div>
-									</li>';
-$i++;
-}
-
-
-
-
-?>
-								</ul>
-							</section>
-						</div>
-					</article>
-                    
+									<div class="action-links">
+										
+										<a href="#" class="approve">
+											<i class="entypo-check"></i>
+											Approve
+										</a>
+										
+										<a href="#" class="delete">
+											<i class="entypo-cancel"></i>
+											Delete
+										</a>
+										
+										
+										<a href="javascript:;" onclick="jQuery('#modal-edit-comment').modal('show');" class="edit">
+											<i class="entypo-pencil"></i>
+											Edit
+										</a>
+										
+									</div>
+									
+								</div>
+								
+							</div>
+						</li>
+                        <?php } ?>
+						
+					
+						
+						
+						
+						
+					</ul>
+					
+				</div>
+			
+			</div>
+		
+		</div>
+	
+	</div>
