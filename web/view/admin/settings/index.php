@@ -18,36 +18,34 @@
 				<div class="panel-body">
 		
 					<div class="form-group">
-						<label for="field-1" class="col-sm-3 control-label">Site title</label>
+						<label for="field-1" class="col-sm-3 control-label"><?php echo Jezyk::get("#site_name"); ?></label>
 						
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="field-1" value="Neon">
+							<input type="text" class="form-control" id="field-1" value="<?php echo Conf::get("site_name"); ?>">
 						</div>
 					</div>
 	
 					<div class="form-group">
-						<label for="field-2" class="col-sm-3 control-label">Tagline</label>
+						<label for="field-2" class="col-sm-3 control-label"><?php echo Jezyk::get("#description"); ?></label>
 						
 						<div class="col-sm-5">
-							<input type="text" class="form-control" id="field-2" value="Bootstrap Admin Theme">
-							<span class="description">Few words that will describe your site.</span>
+							<input type="text" class="form-control" id="field-2" value="<?php echo Conf::get("description"); ?>">
 						</div>
 					</div>
 	
 					<div class="form-group">
-						<label for="field-3" class="col-sm-3 control-label">Site URL</label>
+						<label for="field-3" class="col-sm-3 control-label"><?php echo Jezyk::get("#url"); ?></label>
 						
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="site-url" id="field-3" data-validate="required,url" value="http://exampledomain.com/neon">
+							<input type="text" class="form-control" name="site-url" id="field-3" data-validate="required,url" value="<?php echo Conf::get("url"); ?>">
 						</div>
 					</div>
 	
 					<div class="form-group">
-						<label for="field-4" class="col-sm-3 control-label">Email address</label>
+						<label for="field-4" class="col-sm-3 control-label"><?php echo Jezyk::get("#email"); ?></label>
 						
 						<div class="col-sm-5">
-							<input type="text" class="form-control" name="email" id="field-4" data-validate="required,email" value="john@doe.com">
-							<span class="description">Here you will receive site notifications.</span>
+							<input type="text" class="form-control" name="email" id="field-4" data-validate="required,email" value="<?php echo Conf::get("email"); ?>">
 						</div>
 					</div>
                     
