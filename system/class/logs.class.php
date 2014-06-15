@@ -36,21 +36,13 @@ class Logs {
 			$headers = $this->HEADERS . "\n";
 		}
 		
-		$fd = fopen($this->LOGFILENAME, "a");
-		
-		if (@$headers) {
-			fwrite($fd, $headers);
-		}
-		
 		$debugBacktrace = debug_backtrace();
 		$line = $debugBacktrace[1]['line'];
 		$file = $debugBacktrace[1]['file'];
 		
-		$entry = array($datetime,$errorlevel,$tag,$value,$line,$file);
+		$entry = array("DATETIME" => $datetime, "ERRORLEVEL" => $errorlevel, "TAG" => $tag, "VALUE" => $value,"LINE" => $line,"FILE" => $file);
 		
-		fputcsv($fd, $entry, $this->SEPARATOR);
-		
-		fclose($fd);
+		DB::query(Database::INSERT, DB::insert('logs', array_keys($entry))->values(array_values($entry)))->execute();
 		
 	}
 	

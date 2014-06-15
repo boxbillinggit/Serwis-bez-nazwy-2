@@ -115,9 +115,9 @@ try
 
 catch( ReflectionException $e )
 {
-	header("Location: /");
+	//header("Location: /");
 	
-/*			$template = View::factory('Webcms/error');
+		$template = View::factory('Webcms/error');
 			$class   = get_class($e);
 			$code    = $e->getCode();
 			$message = $e->getMessage();
@@ -131,9 +131,9 @@ catch( ReflectionException $e )
 			$template->file = $file;
 			$template->line = $line;
 			$template->trace = $trace;
-			echo $template;*/
-	
-	/*pr($e); die();
+			echo $template;
+
+	/*
 	$_SESSION['ex'] = '';
 	// URL for new route
 	$error_page = Route::get('error')->uri(array('action' => 'brak', 'id' => $request->uri()));

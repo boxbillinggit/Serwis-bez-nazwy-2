@@ -278,6 +278,8 @@ public function action_settings() {
 	//LADUJE DANE Z MYSQL 
 	$this->template->content = View::factory('admin/settings/index');
 	
+	$this->log->info('Ustawienia ' . Request::instance()->controller .' AKCJA '. Request::instance()->action .' KATALOG '. Request::instance()->directory);
+	
 	//KONCZE LADOWAĆ
 	echo $this->template;
 	} else {
@@ -293,6 +295,7 @@ public function action_logs() {
 	$this->template->uris = 'http://'.$_SERVER['HTTP_HOST'].'/web/view/admin/';
 	$this->template->users = Auth::instance()->get_user();	
 	$this->template->content = View::factory('admin/logs/index');
+	$this->template->content->logs = DB::query(Database::SELECT, 'SELECT * FROM logs')->as_object()->execute();
 	echo $this->template;
 	} else {
 		Request::instance()->redirect("/admin");
