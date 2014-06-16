@@ -24,7 +24,7 @@ class Controller_Home_Home extends Controller  {
 	$title = "Tytuł Strony Głownej";
 	$this->template->users = Auth::instance()->get_user();
 	$this->template->headers = View::factory($this->theme.'/header')->bind('title',$title)->bind('uris',$aa);
-	$this->template->content = "Coś";
+	$this->template->content = View::factory($this->theme.'/content/index');
 	$this->template->footer = View::factory($this->theme.'/footer');
 	echo $this->template;
 	}

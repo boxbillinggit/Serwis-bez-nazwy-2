@@ -105,7 +105,9 @@
 			Gzip::remove();
 			ob_start();	
 		}
-		
+
+
+define('THEMEROOT', "/web/view/".Templates::init()."/");		
 
 $request = Request::instance();
 try

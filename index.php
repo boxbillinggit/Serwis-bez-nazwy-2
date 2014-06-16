@@ -30,6 +30,5 @@ define('SYSPATH', realpath($system).DIRECTORY_SEPARATOR);
 unset($application, $modules, $system); 
 
 require APPPATH.'bootstrap'.EXT;
-       
 
 ?>
