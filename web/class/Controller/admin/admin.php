@@ -7,10 +7,7 @@ class Controller_Admin_admin extends Controller {
 	$this->session = Session::instance();
     $this->auth = Auth::instance();
 	$this->fb = Facebooks::instance();
-	Webcms::load(SYSPATH.'class/Constant.php');
-	
-	//$this->menu = DB::query(Database::SELECT, 'SELECT * FROM menu_admin Where menu=0')->execute()->as_array();		
-	
+	Webcms::load(SYSPATH.'class/Constant.php');	
 	}
 
 	public function before()
@@ -112,9 +109,8 @@ public function action_podstrony() {
 	$this->template->uris = 'http://'.$_SERVER['HTTP_HOST'].'/web/view/admin/';
 	$this->template->users = Auth::instance()->get_user();
 	//LADUJE DANE Z MYSQL 
-	$query = DB::query(Database::SELECT, 'SELECT *, cms.id as id_cms FROM  `cms` LEFT JOIN  `menu` ON cms.seo = menu.link')->execute()->as_array();
-	$menii = DB::query(Database::SELECT, 'SELECT * FROM menu WHERE sub_id=0 AND top=1')->execute()->as_array();
-	$this->template->content = View::factory('admin/podstrony/index')->bind('podstrona',$query)->bind('menn',$menii);
+	$query = DB::query(Database::SELECT, 'SELECT * FROM  `cms`')->as_object()->execute();
+	$this->template->content = View::factory('admin/podstrony/index')->bind('podstrona',$query);
 	
 	
 	//KONCZE LADOWAĆ
@@ -122,7 +118,7 @@ public function action_podstrony() {
 	$data = Request::current()->post();
 	if(empty($data)) {} else {	
 	$seo = str_replace(" ","_",$data['seo']);
-	DB::query(Database::INSERT, DB::insert('menu', array('name','link','top','sub_id'))->values(array($data['title'],$seo,0,$data['sub_id'])))->execute();
+	//DB::query(Database::INSERT, DB::insert('menu', array('name','link','top','sub_id'))->values(array($data['title'],$seo,0,$data['sub_id'])))->execute();
 	unset($data['sub_id']);
 	DB::query(Database::INSERT, DB::insert('cms', array_keys($data))->values(array_values($data)))->execute();
 	$this->log->info('Dodano Nową Podstrone O Tytule: '.$data['title']);
